@@ -88,3 +88,49 @@ Features, Euclidean Distance, and Cosine Similarity
        - Cosine similarity: how aligned their direction is in space
 """
 
+
+"""
+Features, Euclidean Distance, and Cosine Similarity
+
+1. Feature = input
+   A feature is an input to the model, usually represented as numbers in a vector.
+   Example in linear regression:
+       Features for house price prediction might be:
+       [size_in_sqft, number_of_rooms, distance_to_city]
+   In GNNs, after representation learning, each node has a learned feature vector
+   (embedding) that can be used as input to downstream models.
+
+2. Euclidean distance
+   Measures the straight-line distance between two points in space.
+   Formula (for vectors a and b of dimension d):
+       Euclidean(a, b) = sqrt( (a1 - b1)^2 + (a2 - b2)^2 + ... + (ad - bd)^2 )
+   Example:
+       a = [0, 0]
+       b = [3, 4]
+       distance = sqrt( (3-0)^2 + (4-0)^2 ) = sqrt(9 + 16) = sqrt(25) = 5
+   A small Euclidean distance means points are close together.
+
+3. Cosine similarity
+   Measures the angle between two vectors, not their distance.
+   Formula:
+       cosine_similarity(a, b) = (a · b) / (||a|| * ||b||)
+       where:
+           a · b = dot product of a and b
+           ||a|| = length (magnitude) of vector a
+           ||b|| = length (magnitude) of vector b
+   Range:
+       +1   → vectors point in the exact same direction
+        0   → vectors are at 90 degrees (no similarity)
+       -1   → vectors point in opposite directions
+   Example:
+       a = [1, 0]
+       b = [10, 0]
+       cosine similarity = 1 (same direction, different magnitude)
+
+4. Why these are used in GNNs
+   After learning embeddings, similarity between two nodes can be measured by:
+       - Euclidean distance: how far apart they are in space
+       - Cosine similarity: how aligned their direction is in space
+"""
+
+
